@@ -1,15 +1,28 @@
 # https://leetcode.com/problems/fizz-buzz/submissions/
 
 class Solution:
-    def fizzBuzz(self, n: int) -> List[str]:
+    def fizzBuzz(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        # ans list
         ans = []
-        for i in range(1, n + 1):
-            if i % 3 == 0 and i % 5 == 0:
+
+        for num in range(1,n+1):
+
+            divisible_by_3 = (num % 3 == 0)
+            divisible_by_5 = (num % 5 == 0)
+
+            if divisible_by_3 and divisible_by_5:
+                # Divides by both 3 and 5, add FizzBuzz
                 ans.append("FizzBuzz")
-            elif i % 3 == 0:
+            elif divisible_by_3:
+                # Divides by 3, add Fizz
                 ans.append("Fizz")
-            elif i % 5 == 0:
+            elif divisible_by_5:
+                # Divides by 5, add Buzz
                 ans.append("Buzz")
             else:
-                ans.append(str(i))
-        return ans
+                # Not divisible by 3 or 5, add the number
+                ans.append(str(num))
