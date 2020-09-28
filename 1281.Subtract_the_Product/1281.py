@@ -8,3 +8,8 @@ class Solution:
             prod *= int(n_str[i])
             sum += int(n_str[i])
         return prod - sum
+
+
+    def subtractProductAndSum(self, n):
+        A = map(int, str(n))
+        return reduce(operator.mul, A) - sum(A)
