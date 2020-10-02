@@ -10,8 +10,8 @@ class Solution:
                 cnt[n] = []
         return ans
 
-# HashMap
-        def groupThePeople(self, groupSizes):
+
+    def groupThePeople(self, groupSizes):
         count = collections.defaultdict(list)
         for i, size in enumerate(groupSizes):
             count[size].append(i)
