@@ -9,3 +9,15 @@ https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
 class Solution:
     def sumEvenGrandparent(self, root: TreeNode) -> int:
         
+        def dfs(node: TreeNode, parent: TreeNode, grandParent: TreeNode):
+            if not node:
+                return
+            nonlocal answer
+            if parent and grandParent and grandParent.val % 2 == 0:
+                answer += node.val
+            dfs(node.left, node, parent)
+            dfs(node.right, node, parent)
+
+        answer = 0
+        dfs(root, None, None)
+        return answer
