@@ -8,3 +8,7 @@ class Solution:
                 if J[i] == S[j]:
                     ans += 1
         return ans
+
+
+def numJewelsInStones(self, J, S):
+    return sum(map(J.count, S))
